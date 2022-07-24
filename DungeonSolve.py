@@ -88,18 +88,6 @@ class State():
                     if (t >= 3):
                         return False
 
-        #for pos in range(8 * (row + 1)):
-        #    x = int(pos % 8) + 2
-        #    y = int(pos / 8) + 2
-        #    if self.board[y][x] == ".":
-        #        t = 0
-        #        if self.board[y - 1][x] == "X": t += 1
-        #        if self.board[y + 1][x] == "X": t += 1
-        #        if self.board[y][x - 1] == "X": t += 1
-        #        if self.board[y][x + 1] == "X": t += 1
-        #        if (t >= 3):
-        #            return False
-
         # Early treasure check
         treasures = list()
         for t in self.treaure:
@@ -123,18 +111,6 @@ class State():
                 # exempt 2x2 areas in the treasure room
                 if t == 4 and len(treasure_tiles.intersection({(x,y), (x-1,y), (x,y-1), (x-1,y-1)})) == 0:
                     return False
-
-        #for pos in range(1, 8 * (row + 1)):
-        #    x = int(pos % 8) + 2
-        #    y = int(pos / 8) + 2
-        #    t = 0
-        #    if self.board[y - 1][x - 0] == ".": t += 1
-        #    if self.board[y - 1][x - 1] == ".": t += 1
-        #    if self.board[y - 0][x - 0] == ".": t += 1
-        #    if self.board[y - 0][x - 1] == ".": t += 1
-        #    # exempt 2x2 areas in the treasure room
-        #    if t == 4 and len(treasure_tiles.intersection({(x,y), (x-1,y), (x,y-1), (x-1,y-1)})) == 0:
-        #        return False
 
         # Check that monsters have an exit
         for m in self.monsters:
