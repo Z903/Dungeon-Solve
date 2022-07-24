@@ -1,0 +1,74 @@
+{
+	"puzzles": {
+		"Example": {
+			"name": "Example",
+            "cols": [4, 2, 4, 1, 2, 1],
+            "rows": [3, 1, 2, 5, 1, 2],
+            "mons": [[0, 5], [5, 4]],
+            "trea": [[5, 0]]
+		},
+        "Tenaxxus's Gullet": {
+			"name": "Tenaxxus's Gullet",
+            "cols": [4, 4, 2, 6, 2, 3, 4, 7],
+            "rows": [7, 3, 4, 1, 7, 1, 6, 3],
+            "mons": [[0, 5], [2, 7], [5, 0], [7, 7]],
+            "trea": [[1, 2]]
+		},
+        "The Twin Ciries of the Dead": {
+			"name": "The Twin Ciries of the Dead",
+            "cols": [1, 3, 1, 5, 3, 4, 3, 5],
+            "rows": [5, 2, 2, 3, 6, 0, 6, 1],
+            "mons": [[0, 4], [4, 7], [6, 7]],
+            "trea": [[2, 1], [4, 1]]
+		},
+        "The Gardens of Hell": {
+			"name": "The Gardens of Hell",
+            "cols": [1, 4, 3, 6, 3, 1, 4, 4],
+            "rows": [6, 0, 4, 1, 5, 3, 3, 4],
+            "mons": [[0, 0], [0, 4], [0, 7], [7, 0], [7, 3]],
+            "trea": [[4, 6]]
+		},
+        "The House Penumbral": {
+			"name": "The House Penumbral",
+            "cols": [0, 4, 0, 7, 3, 4, 3, 2],
+            "rows": [6, 2, 3, 1, 5, 1, 4, 1],
+            "mons": [[0, 0], [2, 0], [6, 7]],
+            "trea": [[7, 1]]
+		},
+        "The Maze of the Minotaur": {
+			"name": "The Maze of the Minotaur",
+            "cols": [7, 2, 6, 1, 3, 2, 6, 1],
+            "rows": [0, 7, 3, 3, 3, 5, 2, 5],
+            "mons": [[0, 0], [1, 2]],
+            "trea": [[3, 2]]
+		},
+        "The Halls of the Golemancer": {
+			"name": "The Halls of the Golemancer",
+            "cols": [5, 3, 2, 4, 6, 4, 1, 5],
+            "rows": [6, 3, 3, 3, 5, 3, 4, 3],
+            "mons": [[5, 0], [5, 2], [5, 4], [7, 1], [7, 3], [7, 5]],
+            "trea": [[2, 2]]
+		},
+        "The Tomb of the Broken God": {
+			"name": "The Tomb of the Broken God",
+            "cols": [1, 3, 3, 2, 6, 2, 4, 1],
+            "rows": [1, 4, 1, 6, 2, 2, 5, 1],
+            "mons": [[4, 0], [5, 7], [7, 4]],
+            "trea": [[1, 0]]
+		},
+        "The Hive of Great Sorrow": {
+			"name": "The Hive of Great Sorrow",
+            "cols": [3, 6, 0, 5, 4, 0, 6, 3],
+            "rows": [6, 2, 4, 3, 2, 4, 2, 4],
+            "mons": [[0, 1], [0, 6], [2, 0], [4, 3], [5, 0], [7, 1], [7, 6]],
+            "trea": []
+		},
+        "The Lair of the Elemental King": {
+			"name": "The Lair of the Elemental King",
+            "cols": [5, 2, 1, 2, 5, 4, 2, 3],
+            "rows": [4, 1, 4, 2, 6, 2, 3, 2],
+            "mons": [[2, 2], [7, 0]],
+            "trea": [[3, 6]]
+		}
+	}
+}
