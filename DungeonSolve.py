@@ -155,7 +155,19 @@ class State():
         if row >= self.height: return
 
         y = row + 2
-        open_spaces = (x for x in range(2, self.width + 2) if self.board[y][x] == ".")
+        t = self.transposed()[2:-2]
+
+        # Count number of walls in each col and if we could place a wall there record the index
+        open_spaces = list(x for x,w,c in zip(
+            range(2, self.width + 2),
+            (sum(1 for w in z[2:-2] if w == "X") for z in t),
+            self.cols
+        ) if w < c and self.board[y][x] == ".")
+
+        # Exit early if we would not be able to insert the required number of walls in this row
+        if len(open_spaces) < self.rows[row]:
+            return
+
         for s in itertools.combinations(open_spaces, self.rows[row]):
 
             # Set the selected open spaces to X
