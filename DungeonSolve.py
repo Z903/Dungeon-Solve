@@ -58,11 +58,11 @@ class State():
         return result
 
     def count_hallways(self):
-        # Make a set of all empty spaces
+        # Make a set of all non-wall spaces
         hall_positions = set()
         for row in range(2, self.width + 2):
             for col in range(2, self.height + 2):
-                if self.board[row][col] == ".":
+                if self.board[row][col] != "X":
                     hall_positions.add((row, col))
 
         # Remove all connected hallway tiles from hall_positions recursively
