@@ -57,6 +57,28 @@ class State():
                 result.add((x + ox, y + oy))
         return result
 
+    def count_hallways(self):
+        # Make a set of all empty spaces
+        hall_positions = set()
+        for row in range(2, self.width + 2):
+            for col in range(2, self.height + 2):
+                if self.board[row][col] == ".":
+                    hall_positions.add((row, col))
+
+        # Remove all connected hallway tiles from hall_positions recursively
+        def removeIsland(pos):
+            if pos in hall_positions:
+                hall_positions.remove(pos)
+                for neighbourPos in ((-1, 0),(1, 0),(0, -1),(0, 1)):
+                    removeIsland((pos[0] + neighbourPos[0], pos[1] + neighbourPos[1]))
+        
+        # Count the number of seperated hallways
+        result = 0
+        while hall_positions:
+            result += 1
+            removeIsland(next(iter(hall_positions)))
+        return result
+
     def check(self, row):
         """
         Check from 0 up to `row`
@@ -146,7 +168,9 @@ class State():
             if inner["."] != 8 or inner["T"] != 1 or walls["X"] != 11 or walls["."] != 1:
                 return False
 
-        # Note that we never actually check that all paths connect; we may want to do this in the future
+        # Check that all halls connect
+        if self.count_hallways() != 1:
+            return False
 
         # We have found a solution
         return True
@@ -195,7 +219,7 @@ puzzles = {}
 with open("puzzles.json") as f:
     puzzles = json.load(f)["puzzles"]
 for p in puzzles.values():
-    print p["name"] + "\n"
+    print(p["name"] + "\n")
     state = State(**p)
     state.show()
     for solution in state.solve():
